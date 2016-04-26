@@ -15,11 +15,11 @@ module SirTrevorRails
 
       private
       def define_attribute_reader(attribute)
-        define_method attribute do
+        define_method "sir_trevor_#{attribute}" do
           content = read_attribute(attribute)
           return SirTrevorRails::BlockArray.new if content.blank?
-          instance_variable_get("@#{attribute}") ||
-            instance_variable_set("@#{attribute}", SirTrevorRails::BlockArray.from_json(content, self))
+          instance_variable_get("@sir_trevor_#{attribute}") ||
+            instance_variable_set("@sir_trevor_#{attribute}", SirTrevorRails::BlockArray.from_json(content, self))
         end
       end
     end

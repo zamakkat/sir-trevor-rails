@@ -47,7 +47,7 @@ sir_trevor_content :content
 In your view files, call render to display the Sir Trevor content
 
 ```ruby
-<%= render @item.content %>
+<%= render @item.sir_trevor_content %>
 ```
 
 ## Handling image uploads
